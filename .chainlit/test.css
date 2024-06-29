@@ -1,0 +1,65 @@
+/* Samsung logo */
+.chat-header img {
+    content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy533cub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNDkgNDkiIHhtbGnsPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3htbGnsIj48cGF0aCBkPSJNMTAuNSA0OSBjNy40NCAwIDE0LjUtMy40MiAyMC42LTkuODQgNS43Mi02LjQyIDguNTktMTMuODkgOC41OS0yMi4zOSAwLTguNSAtMi44Ny0xNi43NS03LjU2LTI0LjYyLTQuNjgtNy44Ny0xMS42MS0xNC43LTItMjEuMTQgMi44Ny03LjQ0NiA3LjU2LTE0LjU0IDExLjYyLTIxLjE0eiIgZmlsbD0iI0EwMTUwNiIvPjxwYXRoIGQ9Ik0zOC44NSAzOS40NWMtNy40NSA0LjkwNS0xNi40NCA3LjU2NS0yNS45NS45NDQgMi42NS02LjkwNSAxNC42LTguNDkgMjEuMTUtOS44NCA2LjUyIDYuNDIgOC41OSAxMy44OS45NDQgMjIuMzl6IiBmaWxsPSIjMGEzNTgwIi8+PHBhdGggZD0iTTEwLjUgMjguNDNjNy40NCAwIDE0LjUtMy40MiAyMC42LTkuODQgNS43Mi02LjQyIDguNTktMTMuODkgOC41OS0yMi4zOSAwLTguNSAtMi44Ny0xNi43NS03LjU2LTI0LjYyLTQuNjgtNy44Ny0xMS42MS0xNC43LTItMjEuMTQgMi44Ny03LjQ0NiA3LjU2LTE0LjU0IDExLjYyLTIxLjE0eiIgZmlsbD0iI2ZmZmZmZiIvPjwvc3ZnPg==");
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  
+  /* Chat header background color */
+  .chat-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Chat body background color */
+  .chat-body {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 4px;
+    height: calc(100vh - 100px);
+    overflow-y: scroll;
+  }
+  
+  /* Message bubbles */
+  .message {
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Sender message bubble */
+  .message.sender {
+    background-color: #e4e4e4;
+    justify-content: flex-end;
+  }
+  
+  /* Receiver message bubble */
+  .message.receiver {
+    background-color: #fff;
+    justify-content: flex-start;
+  }
+  
+  /* Message text */
+  .message p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Timestamp */
+  .timestamp {
+    font-size: 12px;
+    color: #999;
+    margin-top: 5px;
+    text-align: right;
+  }
+  

@@ -1,0 +1,74 @@
+This is a Python script that creates a vector database using the Langchain library. Here's a breakdown of what the code does:
+
+Importing libraries
+
+The script starts by importing several libraries from the Langchain community:
+
+HuggingFaceEmbeddings: a library for generating embeddings (vector representations) of text using Hugging Face models.
+FAISS: a library for creating and managing vector databases using the FAISS (Facebook AI Similarity Search) algorithm.
+PyPDFLoader and DirectoryLoader: libraries for loading documents from a directory, specifically PDF files.
+RecursiveCharacterTextSplitter: a library for splitting text into smaller chunks.
+Defining constants
+
+The script defines two constants:
+
+DATA_PATH: the path to the directory containing the PDF files to be processed.
+DB_FAISS_PATH: the path where the vector database will be saved.
+Creating a vector database
+
+The create_vector_db function is the main entry point of the script. It performs the following steps:
+
+Loading documents: It uses the DirectoryLoader to load PDF files from the DATA_PATH directory. The glob parameter specifies that only files with a .pdf extension should be loaded.
+Splitting text into chunks: It uses the RecursiveCharacterTextSplitter to split the loaded documents into smaller chunks of text, with a chunk size of 500 characters and an overlap of 50 characters.
+Generating embeddings: It uses the HuggingFaceEmbeddings library to generate vector embeddings for each chunk of text. The model_name parameter specifies the Hugging Face model to use (in this case, sentence-transformers/all-MiniLM-L6-v2), and the model_kwargs parameter specifies that the model should run on the CPU.
+Creating a FAISS database: It uses the FAISS library to create a vector database from the embedded chunks of text.
+Saving the database: It saves the FAISS database to the DB_FAISS_PATH location.
+Running the script
+
+The script is designed to be run as a standalone program. The if __name__ == "__main__": block ensures that the create_vector_db function is only executed when the script is run directly (i.e., not when it's imported as a module by another script).
+
+Overall, this script creates a vector database from a collection of PDF files, which can be used for various natural language processing tasks, such as semantic search or clustering.
+
+
+
+This is a Python code that implements a question-answering (QA) bot using the Langchain library. Here's a breakdown of the code:
+
+Importing Libraries
+
+The code starts by importing various libraries from Langchain, including:
+
+document_loaders: for loading documents from files or directories
+prompts: for defining prompt templates for the QA model
+embeddings: for generating embeddings (vector representations) of text
+vectorstores: for storing and retrieving embeddings
+llms: for loading language models (LLMs)
+chains: for defining the QA chain
+chainlit: for building a chat interface for the QA bot
+Defining Constants and Functions
+
+The code defines several constants and functions:
+
+DB_FAISS_PATH: the path to the FAISS vector store database
+custom_prompt_template: a custom prompt template for the QA model
+set_custom_prompt(): a function that returns a PromptTemplate object with the custom prompt template
+retrieval_qa_chain(): a function that creates a RetrievalQA chain with the specified LLM, prompt, and vector store
+load_llm(): a function that loads a language model (in this case, a LLaMA model)
+qa_bot(): a function that creates a QA bot by loading the LLM, vector store, and prompt, and creating a RetrievalQA chain
+final_result(): a function that takes a query as input and returns the response from the QA bot
+Defining the QA Bot
+
+The qa_bot() function creates a QA bot by:
+
+Loading the LLM using load_llm()
+Loading the vector store using FAISS.load_local()
+Creating a RetrievalQA chain using retrieval_qa_chain()
+Returning the QA bot object
+Defining the Chat Interface
+
+The code uses Chainlit to build a chat interface for the QA bot. The chat interface is defined using two functions:
+
+start(): a function that is called when the chat starts. It sets up the QA bot and sends a welcome message to the user.
+main(): a function that is called when the user sends a message. It takes the user's message as input, passes it to the QA bot, and sends the response back to the user.
+Using the QA Bot
+
+To use the QA bot, the user can interact with it through the chat interface. The user can ask a question, and the bot will respond with an answer based on the information in the vector store and its knowledge of the world.
